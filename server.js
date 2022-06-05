@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-mongoose.connect("mongodb+srv://Unis434:1SZOtDXe5ov5Tnj2@cluster0.qhy7b.mongodb.net/pizza-hunt?retryWrites=true&w=majority" || 'mongodb://localhost/pizza-hunt', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/pizza-hunt', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
